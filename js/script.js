@@ -1,44 +1,36 @@
+
 $('.tombol').on('click', function () {
     $.ajax({
-
         url: 'http://www.omdbapi.com/?apikey=d894b8b3&s=' + $('.dData').val(),
-        success: dataFilm => {
-            let data = dataFilm.Search
-            let pishData = ''
+
+        success: a => {
+            let data = a.Search
+            let masukkan = ''
             data.forEach(a => {
-                pishData += dataMovie(a)
+                masukkan += dataMovie(a)
             });
-            $('.movies').html(pishData)
+            $('.kotak').html(masukkan)
             $('.ambilId').on('click', function () {
                 $.ajax({
                     url: 'http://www.omdbapi.com/?apikey=d894b8b3&i=' + $(this).data('imdb'),
                     success: m => {
-                        console.log(m);
                         let dataklik = why(m)
-
-
                         $('.modal-body').html(dataklik)
-                    },
-                    error: a => {
-
                     }
-
                 })
-
-
             })
-
-        },
-        error: eror => {
-            console.log(eror.responseText);
         }
+
+
+
     })
 })
 
 
 
 function dataMovie(a) {
-    return `<div class="card ubah" style="width: 18rem;">
+    return `
+    <div class="card ubah " style="width: 18rem;">
     <img src="${a.Poster}" class="card-img-top" alt="">
     <div class="card-body">
         <h5 class="card-title">${a.Title}</h5>
