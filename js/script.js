@@ -30,7 +30,7 @@ $('.tombol').on('click', function () {
 
 function dataMovie(a) {
     return `
-    <div class="card ubah " style="width: 18rem;">
+    <div class="card  " style="width: 18rem;">
     <img src="${a.Poster}" class="card-img-top" alt="">
     <div class="card-body">
         <h5 class="card-title">${a.Title}</h5>
@@ -42,7 +42,7 @@ function dataMovie(a) {
 }
 
 function why(m) {
-    return `<div class="row">
+    return `<div class="row ubah">
     <div class="col-md-3">
         <img src="${m.Poster}" class="" alt="rusak">
     </div>
